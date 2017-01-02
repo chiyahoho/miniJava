@@ -13,10 +13,10 @@ class TypeListener extends miniJavaBaseListener {
 
     @Override public void enterClassDeclaration(miniJavaParser.ClassDeclarationContext ctx) {
         String typeName=ctx.Id(0).getText();
-        if(Type.types.put(typeName, new Type(typeName))!=null){
+        if(Type.types.put(typeName, new Type(typeName)) != null){
             Token token = ctx.Id(0).getSymbol();
             System.err.printf("Duplicate class name at Line %d, Char %d: %s\n", token.getLine(), token.getCharPositionInLine(), ctx.Id(0).getText());
-            System.exit(1);
+            System.exit(2);
         }
     }
 }

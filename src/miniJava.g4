@@ -8,7 +8,7 @@ classDeclaration:
 varDeclaration:
     type Id ';' ;
 methodDeclaration:
-    'public' type Id '(' type Id (',' type Id)*? ')' '{' (varDeclaration)* (stmt)* 'return' exp ';' '}' ;
+    'public' type Id '(' (type Id (',' type Id)*)? ')' '{' (varDeclaration)* (stmt)* 'return' exp ';' '}' ;
 
 type:
     'int' '[' ']'
