@@ -58,7 +58,7 @@ class VarListener extends miniJavaBaseListener {
         }
     }
 
-    @Override public void enterExp(miniJavaParser.ExpContext ctx) {
+    /*@Override public void enterExp(miniJavaParser.ExpContext ctx) {
         if(ctx.getStart().getText().equals("new") && ctx.Id() != null) {
             String type = ctx.Id().getText();
             if(!Type.types.containsKey(type)){
@@ -75,5 +75,5 @@ class VarListener extends miniJavaBaseListener {
                 System.exit(1);
             }
         }
-    }
+    }*/
 }
