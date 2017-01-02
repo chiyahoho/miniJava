@@ -1,4 +1,4 @@
-grammar MiniJava;
+grammar miniJava;
 
 goal : mainClass (classDeclaration)* ;
 mainClass:
