@@ -13,8 +13,8 @@ class Fac {
             num_aux = num * (this.ComputeFac(num-1)) ;
         return num_aux ;
     }
-    public int X(int num){
-        return num;
+    public int X(){
+        return 0;
     }
     public int ComputeFac(int num){
         return num;
