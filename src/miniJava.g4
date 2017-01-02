@@ -2,13 +2,13 @@ grammar miniJava;
 
 goal : mainClass (classDeclaration)* ;
 mainClass:
-    'class' Id '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' Id ')' '{' varDeclaration* stmt* '}' '}';
+    'class' Id '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' Id ')' '{' (stmt) '}' '}';
 classDeclaration:
-    'class' Id ( 'extends' Id )? '{' varDeclaration* methodDeclaration* '}' ;
+    'class' Id ( 'extends' Id )? '{' (varDeclaration)* (methodDeclaration)* '}' ;
 varDeclaration:
     type Id ';' ;
 methodDeclaration:
-    'public' type Id '(' type Id (',' type Id)*? ')' '{' varDeclaration* stmt* 'return' exp ';' '}' ;
+    'public' type Id '(' type Id (',' type Id)*? ')' '{' (varDeclaration)* (stmt)* 'return' exp ';' '}' ;
 
 type:
     'int' '[' ']'
@@ -17,7 +17,7 @@ type:
 |   Id;
 
 stmt:
-    '{' stmt* '}'
+    '{' (stmt)* '}'
 |   'if' '(' exp ')' stmt 'else' stmt
 |   'while' '(' exp ')' stmt
 |   'System.out.println' '('  exp ')' ';'
@@ -39,7 +39,7 @@ exp:
 |   '!' exp
 |   '(' exp ')' ;
 
-Id : [a-zA-Z] [a-zA-Z0-9]* ;
+Id : [a-zA-Z_] [a-zA-Z0-9_]* ;
 INT : [0-9]+ ;
 
 WS : [ \r\t\n]+ -> skip ;
