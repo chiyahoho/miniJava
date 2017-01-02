@@ -16,3 +16,5 @@ class Fac {
     }
 
 }
+
+class Fac{}
