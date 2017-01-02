@@ -25,6 +25,7 @@ public class Main {
         ParseTree tree = parser.goal();
         ParseTreeWalker.DEFAULT.walk(new TypeListener(), tree);
         ParseTreeWalker.DEFAULT.walk(new MethodListener(), tree);
+        ParseTreeWalker.DEFAULT.walk(new VarListener(), tree);
 
         org.antlr.v4.gui.TreeViewer tv=new org.antlr.v4.gui.TreeViewer(Arrays.asList(miniJavaParser.ruleNames),tree);
         tv.open();
